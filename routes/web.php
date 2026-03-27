@@ -21,3 +21,4 @@ Route::get('/liste',function(){
 
 Route::get('/',[controllerEtudiant::class,'index']);
 Route::post('/store',[controllerEtudiant::class,'store']);
+Route::delete('/delete/{id}',[controllerEtudiant::class,'delete']);
