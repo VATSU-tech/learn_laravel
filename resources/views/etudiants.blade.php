@@ -25,6 +25,7 @@
                 <th>Nom</th>
                 <th>Age</th>
                 <th>Telephone</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -33,6 +34,13 @@
                     <td>{{ $etudiant->name }}</td>
                     <td>{{ $etudiant->age }}</td>
                     <td>{{ $etudiant->phone }}</td>
+                    <td>
+                        <form action="/delete" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Supprimer</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
