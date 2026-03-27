@@ -17,5 +17,24 @@
         <label for="phone">Telephone : <input type="number" name="phone" id="phone"></label><br><br>
         <button type="submit">Ajouter</button>
     </form>
+
+    <h2>Liste des etudiants</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Age</th>
+                <th>Telephone</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($etudiants as $etudiant)
+                <tr>
+                    <td>{{ $etudiant->name }}</td>
+                    <td>{{ $etudiant->age }}</td>
+                    <td>{{ $etudiant->phone }}</td>
+                </tr>
+            @endforeach
+        </tbody>
 </body>
 </html>
