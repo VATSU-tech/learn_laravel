@@ -37,4 +37,17 @@ class controllerEtudiant extends Controller
         }
 
     }
+
+    public function api_save(Request $request)
+    {
+        $etudiant = ModelsEtudiant::create([
+            'name' => $request->name,
+            'age' => $request->age,
+            'phone' => $request->phone
+        ]);
+        return response()->json([
+            'message' => 'Etudiant created successfully',
+            'etudiant' => $etudiant
+        ], 201);
+    }
 }
