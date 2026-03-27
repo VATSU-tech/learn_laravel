@@ -25,4 +25,16 @@ class controllerEtudiant extends Controller
     ]);
         return redirect('/');
     }
+
+    public function delete($id)
+    {
+        $etudiant = ModelsEtudiant::find($id);
+        if($etudiant){
+            $etudiant->delete($id);
+            return redirect('/');
+        }else{
+            return redirect('/')->with('error', 'Etudiant not found');
+        }
+
+    }
 }
