@@ -50,4 +50,14 @@ class controllerEtudiant extends Controller
             'etudiant' => $etudiant
         ], 201);
     }
+
+    public function api_see()
+    {
+        $etudiant = ModelsEtudiant::all();
+
+        return response()->json([
+            'message'=> 'leste des etudians',
+            'data'=> $etudiant
+        ]);
+    }
 }
