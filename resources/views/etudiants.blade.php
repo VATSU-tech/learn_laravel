@@ -19,7 +19,7 @@
     </form>
 
     <h2>Liste des etudiants</h2>
-    <table>
+    <table border>
         <thead>
             <tr>
                 <th>Nom</th>
@@ -35,7 +35,7 @@
                     <td>{{ $etudiant->age }}</td>
                     <td>{{ $etudiant->phone }}</td>
                     <td>
-                        <form action="/delete" method="post">
+                        <form action="/delete/{{ $etudiant->id }}" method="post">
                             @csrf
                             @method('DELETE')
                             <button type="submit">Supprimer</button>
